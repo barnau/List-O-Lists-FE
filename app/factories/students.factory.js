@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .factory('DataFactory', DataFactory);
+        .factory('StudentsFactory', StudentsFactory);
 
-    DataFactory.$inject = ['$http'];
+    StudentsFactory.$inject = ['$http'];
 
     /* @ngInject */
-    function DataFactory($http) {
+    function StudentsFactory($http) {
         var service = {
-            getTBD: getTBD
+            getStudents: getStudents
            
         };
         return service;
@@ -18,9 +18,9 @@
         ////////////////
         
 
-        function getTBD() {
-        	//return $http.get('http://www.omdbapi.com/?s=' + title + '&r=json&type=movie');
-            return {}
+        function getStudents() {
+        	return $http.get('http://localhost:53122/api/students');
+            
         };
 
         /*function getMovieDetailData(title) {

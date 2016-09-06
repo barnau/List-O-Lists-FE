@@ -5,19 +5,25 @@
         .module('app', ['ui.router', 'toastr'])
 
         .config(function($stateProvider, $urlRouterProvider){
-        	$urlRouterProvider.otherwise('/main');
+        	$urlRouterProvider.otherwise('/dash');
 
         	$stateProvider
-        	.state('main', {
-        		url: '/main',
-        		templateUrl: '/app/templates/template1.html',
-        		controller: 'MainController as main'
+        	.state('dash', {
+        		url: '/dash',
+        		templateUrl: '/app/templates/dashboard.html',
+        		controller: 'DashboardController as dash'
         	})
-        	.state('secondary', {
-        		url: '/secondary',
-        		templateUrl: '/app/templates/template2.html',
-        		controller: 'SecondaryController as secondary'
-        	});
+        	.state('students', {
+        		url: '/students',
+        		templateUrl: '/app/templates/students.html',
+        		controller: 'StudentsController as studs'
+        	})
+
+            .state('projects', {
+                url: '/projects',
+                templateUrl: '/app/templates/projects.html',
+                controller: 'ProjectsController as proj'
+            });
 
         });
 
