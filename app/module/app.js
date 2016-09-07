@@ -18,6 +18,17 @@
         		templateUrl: '/app/templates/students.html',
         		controller: 'StudentsController as studs'
         	})
+            .state('students.grid', {
+                url: '/grid',
+                templateUrl: '/app/templates/studentsGrid.html',
+                controller: 'StudentsController as studs'
+            })
+            .state('students.detail', {
+                url: '/detail',
+                templateUrl: '/app/templates/studentDetails.html',
+                controller: 'StudentDetailsController as studDetails'
+
+            })
 
             .state('projects', {
                 url: '/projects',
